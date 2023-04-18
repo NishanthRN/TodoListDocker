@@ -1,0 +1,22 @@
+version: '2.15'
+services:
+  react_app:
+    build: ./client
+    container_name: Clientside
+    ports:
+      - 8080:80
+    stdin_open: true
+    tty: true
+  server:
+    build: ./server
+    container_name: Serverside
+    ports:
+      - 8000:8000
+  mongo:
+    image: mongo
+    ports:
+      - 27017:27017
+  mongo-express:
+    image: mongo-express
+    ports:
+      - 8081:8081
